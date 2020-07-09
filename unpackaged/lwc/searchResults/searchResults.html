@@ -1,0 +1,20 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <template if:true={result}>
+            <template for:each={result} for:item="accountData">
+                <lightning-layout-item  padding="horizontal-medium" size="3" flexibility="auto" class="slds-m-around_small" key={accountData.Id}>
+                    <c-card-component account-data={accountData} key={accountData.Id}></c-card-component>
+                </lightning-layout-item>
+            </template>
+        </template>
+        <template if:true={error}>
+            <lightning-layout-item  padding="horizontal-medium" flexibility="auto" class="slds-m-around_small">
+                <div class="errorDiv">
+                    <!--lightning-card variant="narrow"-->
+                        <div class="slds-align_absolute-center">{error}</div>
+                    <!--/lightning-card-->
+                </div>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>

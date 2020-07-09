@@ -1,0 +1,44 @@
+<template>
+    <template if:false={isEdit}>
+        <template if:true={accountData.data}>
+            <lightning-card title={name} icon-name="standard:account">
+                <lightning-button label="Edit" slot="actions" onclick={onEditClick}></lightning-button>
+                <div class="slds-m-around_medium">
+                    <p>Phone : {phone}</p>
+                    <p>Industry : {industry}</p>
+                    <p>Account Number : {accountNumber} </p>
+                    <p>Website : {Website}</p>
+                    <p>Owner : {owner}</p>
+                </div>
+            </lightning-card>
+        </template>
+    </template>
+    <template if:true={isEdit}>
+        <lightning-card title="Edit Account" >
+            <lightning-record-edit-form record-id={accountId} object-api-name="Account"
+                    onsuccess={onSuccess} onerror={onError}>
+                <lightning-messages>
+                </lightning-messages>
+                <lightning-input-field field-name="Name">
+                </lightning-input-field>
+                <lightning-input-field field-name="Industry">
+                </lightning-input-field>
+                <lightning-input-field field-name="Phone">
+                </lightning-input-field>
+                <lightning-input-field field-name="Website">
+                </lightning-input-field>
+                <lightning-input-field field-name="AccountNumber">
+                </lightning-input-field>
+                <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="Save" label="Save" onclick={saveClick}>
+                </lightning-button>
+                <lightning-button class="slds-m-top_small" type="cancel" name="Cancel" label="Cancel" onclick={handleReset}>
+                </lightning-button>
+            </lightning-record-edit-form>
+        </lightning-card>
+    </template>
+    <template if:true={onLoad}>
+        <lightning-card title="Account Detail">
+            No Account Detail Found!
+        </lightning-card>
+    </template>
+</template>

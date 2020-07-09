@@ -1,0 +1,26 @@
+<template>
+    <div class='searchAccount'>
+        <lightning-card title={accountData.Name} icon-name="standard:account" class='lightningCard'>
+            <lightning-layout horizontal-align="space" multiple-rows="true">
+            <div class="slds-p-horizontal--small">
+                <div class="accountproperty">
+                    <span class="label">Phone : {accountData.Phone}</span>
+                </div>
+                <div class="accountproperty">
+                    <span class="label">Active : {accountData.Active__c}</span>
+                </div>
+                <div class="accountproperty">
+                    <span class="label">Industry : {accountData.Industry}</span>
+                </div>
+                <div class="accountproperty">
+                    <span class="label">AccountNumber : {accountData.AccountNumber}</span>
+                </div>
+                <div class="accountproperty">
+                    <span class="label">Website : {accountData.Website}</span>
+                </div>
+                <lightning-button label="Detail" onclick={onDetailButtonClick}></lightning-button>
+            </div>
+            </lightning-layout>
+        </lightning-card>
+    </div>
+</template>

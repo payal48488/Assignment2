@@ -1,0 +1,9 @@
+<template>
+    <div class="accountSearch">
+        <lightning-card title="Search Account">
+            <c-picklist-search onpassselectedvalue = {handleEvent}></c-picklist-search>
+        </lightning-card>
+    </div>
+
+    <c-search-results selected-type-value={selectedTypeValue}></c-search-results>
+</template>
